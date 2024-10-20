@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(255, 212, 235);
+    text-align: center; /* Căn giữa chữ */
+}
+
+.container {
+    text-align: center;
+    position: relative; /* Để trái tim được vị trí tuyệt đối */
+}
+
+h1 {
+    max-width: 90%; /* Giới hạn chiều rộng để tránh căng */
+    font-family: Verdana;
+    color: #da64d4;
+    margin-top : 300px; /* Không có khoảng cách trên dưới */
+    font-size: 50px; /* Kích thước chữ */
+    position: relative;
+    z-index: 1; /* Đảm bảo chữ nằm trên trái tim */
+}
+
+.heart {
+    position: absolute;
+    width: 70px; /* Kích thước hình trái tim */
+    height: 70px;
+    background-image: url('heart.png'); /* Đường dẫn tới hình trái tim */
+    background-size: cover; /* Đảm bảo hình ảnh vừa với kích thước */
+    opacity: 0; /* Bắt đầu với độ mờ */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1; /* Xuất hiện khi rơi */
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0; /* Biến mất khi rơi */
+    }
+}
